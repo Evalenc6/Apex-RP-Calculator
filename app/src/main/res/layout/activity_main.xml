@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/smooth_blue"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apex Legends RP Calculator!"
+        android:textColor="@color/plant_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+
+    <TextView
+        android:id="@+id/currentRankText"
+        android:layout_width="101dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="36dp"
+        android:text="Current Rank"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <Spinner
+        android:id="@+id/rankNumberDropDown"
+        android:layout_width="109dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="4dp"
+        android:entries="@array/rankedNumber_Array"
+
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toEndOf="@id/rankNameDropDown"
+        app:layout_constraintTop_toBottomOf="@id/instructionsText" />
+
+    <TextView
+        android:id="@+id/instructionsText"
+        android:layout_width="101dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="36dp"
+        android:text="Rank Number"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toEndOf="@id/currentRankText"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <Spinner
+        android:id="@+id/rankNameDropDown"
+        android:layout_width="156dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:entries="@array/rankedName_Array"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentRankText" />
+
+    <TextView
+        android:id="@+id/elimsText"
+        android:layout_width="159dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Amount of eliminations:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rankNameDropDown" />
+
+    <SeekBar
+        android:id="@+id/placementSlider"
+        android:layout_width="145dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="4dp"
+        android:max="20"
+        android:min="1"
+        app:layout_constraintStart_toEndOf="@id/placementText"
+        app:layout_constraintTop_toBottomOf="@id/Placement" />
+
+    <TextView
+        android:id="@+id/placementText"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="4dp"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/teamKpInput"
+        app:layout_constraintTop_toBottomOf="@id/Placement" />
+
+    <EditText
+        android:id="@+id/elimsInput"
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/plant_green"
+
+        android:hint="Type Here"
+        android:maxEms="20"
+        android:minEms="1"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elimsText" />
+
+
+    <TextView
+        android:id="@+id/clockTimeText"
+        android:layout_width="108dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Team KP:"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elimsInput"
+
+        />
+
+    <TextView
+        android:id="@+id/Assists"
+        android:layout_width="107dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+
+        android:text="Assists:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/elimsText"
+        app:layout_constraintTop_toBottomOf="@id/rankNumberDropDown" />
+
+    <EditText
+        android:id="@+id/assistInput"
+
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/plant_green"
+        android:hint="Type Here"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/elimsInput"
+        app:layout_constraintTop_toBottomOf="@id/Assists" />
+
+    <TextView
+        android:id="@+id/Placement"
+        android:layout_width="111dp"
+        android:layout_height="20dp"
+
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="14dp"
+        android:text="Placement?:"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/clockTimeText"
+        app:layout_constraintTop_toBottomOf="@id/assistInput" />
+
+    <EditText
+        android:id="@+id/teamKpInput"
+
+        android:layout_width="122dp"
+        android:layout_height="36dp"
+
+        android:layout_marginTop="8dp"
+        android:background="@color/plant_green"
+        android:hint="Type Here"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clockTimeText" />
+
+    <TextView
+        android:id="@+id/howMuchText"
+        android:layout_width="268dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="61dp"
+        android:text="How much RP Gained: "
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/submitScores" />
+
+    <TextView
+        android:id="@+id/TotalRPText"
+        android:layout_width="205dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="28dp"
+        android:text="Total RP Gained: "
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/howMuchText" />
+
+    <Button
+        android:id="@+id/submitScores"
+        android:layout_width="158dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="54dp"
+        android:text="Submit Scores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teamKpInput" />
+
+    <TextView
+        android:id="@+id/newRPGainedText"
+        android:layout_width="99dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="61dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/howMuchText"
+        app:layout_constraintTop_toBottomOf="@+id/submitScores" />
+
+    <TextView
+        android:id="@+id/totalRPGainedText"
+        android:layout_width="107dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/TotalRPText"
+        app:layout_constraintTop_toBottomOf="@+id/howMuchText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
